@@ -1,0 +1,26 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background: #f2f8ff;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.item, .group {
+  padding: 1rem;
+  margin: 10px;
+  border: 2px dashed #333;
+  border-radius: 10px;
+  cursor: grab;
+  width: 120px;
+  display: inline-block;
+  background: white;
+}
+
+.group {
+  background-color: #d4f5d4;
+  height: 150px;
+  vertical-align: top;
+}
