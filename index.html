@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Game Edukatif</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Selamat Datang di Game Edukatif!</h1>
+    <p>Silakan unggah gambar sebagai avatar kamu (opsional):</p>
+    <input type="file" id="imgUpload" accept="image/*">
+    <br><br>
+    <img id="preview" src="" alt="Preview" style="max-width: 200px; display: none;">
+    <br><br>
+    <button onclick="startGame()">Start</button>
+  </div>
+
+  <script>
+    const imgInput = document.getElementById("imgUpload");
+    const preview = document.getElementById("preview");
+
+    imgInput.addEventListener("change", function () {
+      const file = this.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          preview.src = e.target.result;
+          preview.style.display = "block";
+        }
+        reader.readAsDataURL(file);
+      }
+    });
+
+    function startGame() {
+      window.location.href = "game.html";
+    }
+  </script>
+</body>
+</html>
